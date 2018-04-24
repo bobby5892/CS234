@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CloneCustomer.Customer">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACBAAAAkAAABAAAAAAAAAAAAAAAACAAAABg=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CloneCustomer.CustomerList">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="CloneCustomer.CustomerList.ChangeHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>CustomerList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAMAAAABACAABAAADACAAAQAAAAAAAAAoAAAAAAAAIA=</HashCode>
+      <FileName>CustomerList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CloneCustomer.Program">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloneCustomer.Validator">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAUAAAAEAAQEAAAAABAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

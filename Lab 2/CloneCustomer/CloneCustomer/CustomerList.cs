@@ -11,6 +11,8 @@ namespace CloneCustomer
         /// </summary>
         public CustomerList()
         {
+            // Part of Event Handler
+            Changed = new ChangeHandler(HandleChanged);
             // Starts at 0
             this.currentCustomer = 0;
         }
@@ -19,7 +21,6 @@ namespace CloneCustomer
         /// Return a Count of the number of entres in customers
         /// </summary>
 		public int Count => customers.Count;
-
         /// <summary>
         /// Grab the current Customer at the Index Point
         /// </summary>
@@ -28,11 +29,21 @@ namespace CloneCustomer
         /// Grab the current Customer at the Index Point
         /// </summary>
         object IEnumerator.Current => this.customers[this.currentCustomer];
-
-
         public Customer this[int i] => customers[i];
+        public delegate void ChangeHandler(CustomerList customerList);
 
-        public void Add(Customer customer) => customers.Add(customer);
+        public event ChangeHandler Changed;
+
+        public void HandleChanged(CustomerList customerList) {
+            // Is not supposed to do anything - its just so one event is bound already - so we dont have to
+            // check if we're already bound, or deal with other things that may be bound. - In the future tho that
+            // would probably be better etiquette. 
+        }
+        public void Add(Customer customer)
+        {
+            customers.Add(customer);
+            Changed(this);
+        }
 
         public List<Customer> getCustomers() {
             return this.customers;

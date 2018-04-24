@@ -15,6 +15,7 @@ namespace CloneCustomer
         public Form1()
         {
             InitializeComponent();
+            Changed = new ChangeHandler(HandleChanged);
         }
 
         private Customer customer;
@@ -23,7 +24,17 @@ namespace CloneCustomer
         // private List<Customer> customers;
 
         private CustomerList customers = new CustomerList();
+        // Part of the 13-1 portion of the assignment
+        public delegate void ChangeHandler(CustomerList customers);
 
+        public event ChangeHandler Changed;
+
+        public void HandleChanged(CustomerList customers)
+        {
+          
+            lstCustomers.DataSource = customers.getCustomers();
+           
+        }
         private void Form1_Load(object sender, System.EventArgs e)
         {
             customer = new Customer("John", "Mendez", "jmendez@msysco.com");
@@ -57,8 +68,8 @@ namespace CloneCustomer
                 //lstCustomers.DataSource = customers;
 
                 //15-2
-
-                lstCustomers.DataSource = customers.getCustomers();
+                Changed(customers);
+                //lstCustomers.DataSource = customers.getCustomers();
 
 
                
