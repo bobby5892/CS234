@@ -4,4 +4,8 @@ Lab0/mexicantraindominos-bobby5892-2/
 *.ide
 *.ide
 Lab1/MTD/.vs/MTD/v15/.suo
+<<<<<<< HEAD
 *.ide
+=======
+*.cache
+>>>>>>> fd7898c1ca1def166730ae53d21a3327e0a353b0

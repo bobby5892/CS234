@@ -47,7 +47,7 @@ namespace MTDUserInterface
         private int nextDrawIndex = 15;
 
         private int whosTurn = -1;
-        
+        private const int NUMBEROFPLAYERS = 3;
         private const int COMPUTER = 0;
         private const int USER = 1;
        
@@ -216,27 +216,40 @@ namespace MTDUserInterface
         private void SetUp()
         {
             // BoneYard
-            this.pack = new BoneYard();
+            this.pack = new BoneYard(9); // The TileSets in the current UI only go up to 9
 
             //user Hand
-            this.userHand = new Hand();
+            this.userHand = new Hand(this.pack, NUMBEROFPLAYERS); // 2 players
+            this.computerHand = new Hand(this.pack, NUMBEROFPLAYERS);
 
             //Pictures
             this.userHandPBs = new List<PictureBox>();
+            this.mexicanTrainPBs = new List<PictureBox>();
             this.userTrainPBs = new List<PictureBox>();
             this.computerTrainPBs = new List<PictureBox>();
 
             // Trains
             this.userTrain = new PrivateTrain();
+            this.computerTrain = new PrivateTrain();
             this.mexicanTrain = new Train();
+            
 
-            // Deal the initial Hand
+            // Draw the initial Hand
+            this.fillPictureBoxes(); 
+
+
 
             // Figure out who has the highest double
 
             // Play that in the corner
             // Test from ME PC
             
+        }
+        private void TearDown()
+        {
+            indexOfDominoInPlay = -1;
+            whosTurn = -1;
+            nextDrawIndex = 15;
         }
         #region event handlers
 
@@ -313,7 +326,7 @@ namespace MTDUserInterface
         // tear down and then set up
         private void newHandButton_Click(object sender, EventArgs e)
         {
-            //TearDown();
+            TearDown();
             SetUp();
         }
 
@@ -336,6 +349,65 @@ namespace MTDUserInterface
         {
 
         }
-        
+        private void fillPictureBoxes()
+        {
+            // Build List of Picture Box for Hand
+            this.fillPictureBoxFromHand(this.userHand, this.userHandPBs);
+            // Build List of Picture Box for Trains
+            this.fillPictureBoxFromTrain(this.userTrain, this.userTrainPBs);
+            this.fillPictureBoxFromTrain(this.computerTrain, this.computerTrainPBs);
+            this.fillPictureBoxFromTrain(this.mexicanTrain, this.mexicanTrainPBs);
+
+            // Now lets grab the last 5 from each for the trains
+            this.showLastFive(this.mexicanTrainPBs,mexTrainPB1,mexTrainPB2,mexTrainPB3,mexTrainPB4,mexTrainPB5);
+            this.showLastFive(this.computerTrainPBs, compTrainPB1, compTrainPB2, compTrainPB3, compTrainPB4, compTrainPB5);
+            this.showLastFive(this.mexicanTrainPBs, mexTrainPB1, mexTrainPB2, mexTrainPB3, mexTrainPB4, mexTrainPB5);
+
+
+
+        }
+        private void showLastFive(List<PictureBox> boxes, PictureBox pb1, PictureBox pb2, PictureBox pb3, PictureBox pb4,
+            PictureBox pb5)
+        {
+            // The order of this may need ADJUSTEd
+           if(boxes.Count >= 5) { pb5 = boxes[boxes.Count - 5]; }
+           if(boxes.Count >= 4) { pb4 = boxes[boxes.Count - 4]; }
+           if(boxes.Count >= 3) { pb3 = boxes[boxes.Count - 3]; }
+           if (boxes.Count >= 2) { pb2 = boxes[boxes.Count - 2]; }
+           if (boxes.Count >= 1) { pb1 = boxes[boxes.Count - 1]; }
+        }
+        private void fillPictureBoxFromHand(Hand hand, List<PictureBox> box)
+        {
+            // empty the list
+            box.Clear();
+            // Add the dominos from hand
+            for (int i = hand.Count; i > 0; i--)
+            {
+                // Create the domino
+                PictureBox newPic = new PictureBox();
+                newPic.ImageLocation = "dominos/d" + hand[i].Side1 + hand[i].Side2 + ".png";
+
+                // add it to the list
+                box.Add(newPic);
+                
+            }
+        }
+        private void fillPictureBoxFromTrain(Train train, List<PictureBox> box)
+        {
+            // empty the list
+            box.Clear();
+            // Add the dominos from train
+            for (int i = 0; i < train.Count; i++)
+            {
+                // Create the domino
+                PictureBox newPic = new PictureBox();
+                newPic.ImageLocation = "dominos/d" + train[i].Side1 + train[i].Side2 + ".png";
+
+                // add it to the list
+                box.Add(newPic);
+
+            }
+        }
+
     }
 }

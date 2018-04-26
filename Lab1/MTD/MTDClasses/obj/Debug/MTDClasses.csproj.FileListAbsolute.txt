@@ -12,3 +12,10 @@ C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicant
 C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDClasses\obj\Debug\MTDClasses.csproj.CoreCompileInputs.cache
 C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDClasses\obj\Debug\MTDClasses.dll
 C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDClasses\obj\Debug\MTDClasses.pdb
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDClasses\bin\Debug\MTDClasses.xml
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDClasses\bin\Debug\MTDClasses.dll
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDClasses\bin\Debug\MTDClasses.pdb
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDClasses\obj\Debug\MTDClasses.csprojResolveAssemblyReference.cache
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDClasses\obj\Debug\MTDClasses.csproj.CoreCompileInputs.cache
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDClasses\obj\Debug\MTDClasses.dll
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDClasses\obj\Debug\MTDClasses.pdb

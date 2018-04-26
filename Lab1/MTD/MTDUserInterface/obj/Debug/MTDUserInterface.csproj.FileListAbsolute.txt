@@ -63,3 +63,17 @@ C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicant
 C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.CopyComplete
 C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.exe
 C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.pdb
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\bin\Debug\MTDUserInterface.exe.config
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\bin\Debug\MTDUserInterface.exe
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\bin\Debug\MTDUserInterface.pdb
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\bin\Debug\MTDClasses.dll
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\bin\Debug\MTDClasses.pdb
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\bin\Debug\MTDClasses.xml
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csprojResolveAssemblyReference.cache
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.PlayMTDRightClick.resources
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.Properties.Resources.resources
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.GenerateResource.cache
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.CoreCompileInputs.cache
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.CopyComplete
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.exe
+C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.pdb
