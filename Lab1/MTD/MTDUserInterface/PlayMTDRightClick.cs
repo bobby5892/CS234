@@ -10,6 +10,12 @@ using System.Windows.Forms;
 using MTDClasses;
 namespace MTDUserInterface
 {
+    public struct DominoOnTable
+    {
+        public Domino domino;
+        public PictureBox picture;
+    }
+
     public partial class PlayMTDRightClick : Form
     {
 
@@ -50,7 +56,10 @@ namespace MTDUserInterface
         private const int NUMBEROFPLAYERS = 3;
         private const int COMPUTER = 0;
         private const int USER = 1;
-       
+
+        // Create the dominos for the user to be able to interact with.
+        List<DominoOnTable> TableDominos = new List<DominoOnTable>();
+
 
         #region Methods
         
@@ -234,16 +243,53 @@ namespace MTDUserInterface
             this.mexicanTrain = new Train();
             
 
-            // Draw the initial Hand
-            this.fillPictureBoxes(); 
+            // Draw the initial PictureBoxes
+            this.fillPictureBoxes();
 
 
+            // Create the Draggable Player Hand
+            this.drawDraggable();
 
             // Figure out who has the highest double
 
             // Play that in the corner
             // Test from ME PC
             
+        }
+        /// <summary>
+        /// This is for the player hand and will allow the dominos to be moved around. It uses the domios that are tied to a picture box.
+        /// 
+        /// </summary>
+        private void drawDraggable()
+        {
+            int startingX = 10;
+            int startingY = 600;
+            int columns = 8;
+            // Lets Populate Our List
+            for(int i=0; i < this.userHand.Count; i++)
+            {
+                DominoOnTable tableDom = new DominoOnTable();
+                tableDom.domino = this.userHand[i];
+                tableDom.picture = this.userHandPBs[i];
+
+                // Now Lets give the picturebox render dimensions
+                tableDom.picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                tableDom.picture.Location = new System.Drawing.Point(startingX, startingY);
+                tableDom.picture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+                tableDom.picture.Name = tableDom.domino.ToString();
+                tableDom.picture.Size = new System.Drawing.Size(149, 76);
+                tableDom.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                startingX += 150;
+
+                // If the number of tiles is more than the # of columns then go down a row
+                if(startingX > columns*startingX)
+                {
+                    startingX = 10;
+                    startingY += 80;
+                }
+                this.TableDominos.Add(tableDom);
+            }
+          
         }
         private void TearDown()
         {
@@ -409,5 +455,6 @@ namespace MTDUserInterface
             }
         }
 
+  
     }
 }

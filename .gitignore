@@ -9,3 +9,5 @@ Lab1/MTD/.vs/MTD/v15/.suo
 =======
 *.cache
 >>>>>>> fd7898c1ca1def166730ae53d21a3327e0a353b0
+*.ide-wal
+*.ide-shm

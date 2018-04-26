@@ -77,3 +77,17 @@ C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MT
 C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.CopyComplete
 C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.exe
 C:\Users\Cassandra\Documents\GitHub\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\bin\Debug\MTDUserInterface.exe.config
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\bin\Debug\MTDUserInterface.exe
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\bin\Debug\MTDUserInterface.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\bin\Debug\MTDClasses.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\bin\Debug\MTDClasses.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\bin\Debug\MTDClasses.xml
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csprojResolveAssemblyReference.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.PlayMTDRightClick.resources
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.Properties.Resources.resources
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.GenerateResource.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.CoreCompileInputs.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.CopyComplete
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.exe
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.pdb

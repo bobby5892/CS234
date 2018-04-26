@@ -164,6 +164,7 @@
             this.enginePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.enginePB.TabIndex = 23;
             this.enginePB.TabStop = false;
+
             // 
             // userLabel
             // 
