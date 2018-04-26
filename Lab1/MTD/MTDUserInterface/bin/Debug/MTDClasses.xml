@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MTDClasses</name>
+    </assembly>
+    <members>
+        <member name="T:MTDClasses.BoneYard">
+            <summary>
+            Bonyard Class - This has a list of dominos that will act as the draw pile of dominos and all methods 
+            related to that.
+            </summary>
+        </member>
+        <member name="T:MTDClasses.Game">
+            <summary>
+            Game Class - 
+            </summary>
+        </member>
+        <member name="T:MTDClasses.Hand">
+            <summary>
+            Hand Class - Holds a List of dominos and all methods for interacting with that list.
+            </summary>
+        </member>
+        <member name="F:MTDClasses.Hand.handOfDominos">
+            <summary>
+            handOfDominos - A List containing dominos
+            <list type="Domino"></list>
+            </summary>
+        </member>
+        <member name="P:MTDClasses.Hand.Count">
+            <summary>
+            Count - Returns INT of how many dominos in hand
+            <typeparam name="datatype">Int</typeparam> 
+            </summary>
+        </member>
+        <member name="P:MTDClasses.Hand.IsEmpty">
+            <summary>
+            IsEmpty - Returns a bool if hand is empty
+            <typeparam name="datatype">Bool</typeparam>
+            </summary>
+        </member>
+        <member name="P:MTDClasses.Hand.Score">
+            <summary>
+            Score - Returns an int of the total value of the dominos in hand
+            </summary>
+        </member>
+        <member name="P:MTDClasses.Hand.Item(System.Int32)">
+            <summary>
+            this[int] -- Returns a Domino or passes a dominio - Maps the index of Hand to allow Hand[0] reference to a domino
+            </summary>
+        </member>
+        <member name="M:MTDClasses.Hand.Add(MTDClasses.Domino)">
+            <summary>
+            Add (Domino) -- This Adds a Domino to hand
+            </summary>
+        </member>
+        <member name="M:MTDClasses.Hand.Draw(MTDClasses.BoneYard)">
+            <summary>
+            Draw - This will reach out to the boneyard and grab a domino
+            </summary>
+        </member>
+        <member name="M:MTDClasses.Hand.IndexOfDomino(System.Int32)">
+            <summary>
+            IndexOfDomino  - Pass in the # of dots on the domino (pipValue) and return an INT of the index location
+            </summary>
+        </member>
+        <member name="M:MTDClasses.Hand.IndexOfDoubleDomino(System.Int32)">
+            <summary>
+            IndexOfDoubleDomino - Returns the Index of where a double domino with the pipvalue is ,
+                                 -1 if not found
+            </summary>
+            <param name="pipValue">int - Number of dots on domino</param>
+            <returns></returns>
+        </member>
+        <member name="M:MTDClasses.Hand.IndexOfHighDouble">
+            <summary>
+            IndexOfHighDouble -- Return the Index of the highest pair of dominos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MTDClasses.Hand.GetDomino(System.Int32)">
+            <summary>
+            GetDomino - Returns an Int of the Index Position of the domino
+            </summary>
+            <param name="pipValue">int - the number of dots onthe domino</param>
+            <returns></returns>
+        </member>
+        <member name="M:MTDClasses.Hand.GetDoubleDomino(System.Int32)">
+            <summary>
+            GetDoubleDomino - Returns an int of the index of a double domino wit the pipValue
+            </summary>
+            <param name="pipValue">int - the # of dots on the domino</param>
+            <returns></returns>
+        </member>
+        <member name="M:MTDClasses.Hand.#ctor">
+            <summary>
+            Hand - Default Constructor
+            </summary>
+        </member>
+        <member name="M:MTDClasses.Hand.#ctor(MTDClasses.BoneYard,System.Int32)">
+            <summary>
+            Hand - Overloaded Constructor - Passes in a boneyard
+            </summary>
+            <param name="by">Boneyard - Pass in a Boneyard Object</param>
+            <param name="numPlayers">Int - The number of players</param>
+        </member>
+        <member name="M:MTDClasses.Hand.HasDomino(System.Int32)">
+            <summary>
+            HasDomino - Returns Bool - looks for domino with a pipValue
+            </summary>
+            <param name="pipValue">int - how many dots</param>
+            <returns></returns>
+        </member>
+        <member name="M:MTDClasses.Hand.Play(MTDClasses.Domino,MTDClasses.Train)">
+            <summary>
+            Play - Plays a domino on a train
+            </summary>
+            <param name="d">Domino </param>
+            <param name="t">Train</param>
+        </member>
+        <member name="M:MTDClasses.Hand.Play(System.Int32,MTDClasses.Train)">
+            <summary>
+            Play - Plays a domino from the hand on a train
+            </summary>
+            <param name="index"></param>
+            <param name="t"></param>
+        </member>
+        <member name="M:MTDClasses.Hand.RemoveAt(System.Int32)">
+            <summary>
+            RemoveAt - Deletes a domino from the hand (Not Recommended)
+            </summary>
+            <param name="index">int - the location in hand to delete</param>
+        </member>
+        <member name="M:MTDClasses.Hand.ToString">
+            <summary>
+            Override the ToString Method - Grab all the strings from dominos in the hand
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MTDClasses.PrivateTrain">
+            <summary>
+            PrivateTrain - This is a derived class from Train that includes additional methods and a Hand
+            </summary>
+        </member>
+        <member name="F:MTDClasses.PrivateTrain.hand">
+            <summary>
+            // Hand - Create from Hand Class
+            </summary>
+        </member>
+        <member name="F:MTDClasses.PrivateTrain.isOpen">
+            <summary>
+            //isOpen - bool - whether the the train can be played on by others
+            </summary>
+        </member>
+        <member name="P:MTDClasses.PrivateTrain.IsOpen">
+            <summary>
+            IsOpen - Property - get only - This returns a boolean that tells if the train is open 
+            </summary>
+        </member>
+        <member name="M:MTDClasses.PrivateTrain.Close">
+            <summary>
+            Close - No return - this closes the train so it can't be played on by other users
+            </summary>
+        </member>
+        <member name="M:MTDClasses.PrivateTrain.IsPlayable(MTDClasses.Domino,System.Boolean@,MTDClasses.Hand)">
+            <summary>
+            IsPlayable - Returns a boolean - checks if train is open or its your train, and then looks to see if you can play this
+            domino on the train
+            </summary>
+            <param name="d">Domino - The one its checking</param>
+            <param name="mustFlip">Bool - Does it need flipped to play</param>
+            <param name="h">Hand - Passes in a hand to check if its yours or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:MTDClasses.PrivateTrain.Open">
+            <summary>
+            Open - No Return - this opens the train to be playable b others
+            </summary>
+        </member>
+        <member name="M:MTDClasses.PrivateTrain.#ctor">
+            <summary>
+            Private Train - Default Constructor
+            </summary>
+        </member>
+        <member name="M:MTDClasses.PrivateTrain.#ctor(MTDClasses.Hand)">
+            <summary>
+            PrivateTrain Constructor - Takes a hand object and stores in the PrivateTrain
+            </summary>
+            <param name="h">Hand</param>
+        </member>
+        <member name="M:MTDClasses.PrivateTrain.#ctor(MTDClasses.Hand,System.Int32)">
+            <summary>
+            PrivateTrain Constructor - Takes a hand object and stores in the PrivateTrain Class, and stores the int engineValue
+            </summary>
+            <param name="h">Hand - stores the hand</param>
+            <param name="engineValue">int - sets the engine value</param>
+        </member>
+        <member name="T:MTDClasses.Train">
+            <summary>
+            Train Class - This is a Base Class that has a List of Dominos and all the methods for interacting
+            with the train.
+            </summary>
+        </member>
+        <member name="F:MTDClasses.Train.dominos">
+            <summary>
+            protected - List of Domino - dominos
+            </summary>
+        </member>
+        <member name="F:MTDClasses.Train.engineValue">
+            <summary>
+            engineValue - int stores the starting pipvalue
+            </summary>
+        </member>
+        <member name="P:MTDClasses.Train.Count">
+            <summary>
+            Count - int - how many dominos on the train
+            </summary>
+        </member>
+        <member name="P:MTDClasses.Train.EngineValue">
+            <summary>
+            EngineValue - int - Allow Changing of Engine Value
+            </summary>
+        </member>
+        <member name="P:MTDClasses.Train.IsEmpty">
+            <summary>
+            IsEmpty - bool - Check if train is empty
+            </summary>
+        </member>
+        <member name="P:MTDClasses.Train.LastDomino">
+            <summary>
+            LastDomino - Returns a domino from the farthest right position on train
+            </summary>
+        </member>
+        <member name="P:MTDClasses.Train.PlayableValue">
+            <summary>
+            PlayableValue - Returns an Int of the engine value (if train empty) or the farthest right tiles right side (side2
+            </summary>
+        </member>
+        <member name="P:MTDClasses.Train.Item(System.Int32)">
+            <summary>
+            Indexer for Train
+            </summary>
+            <param name="index">int - index location</param>
+            <returns></returns>
+        </member>
+        <member name="M:MTDClasses.Train.#ctor">
+            <summary>
+            Train - Default Constructor
+            </summary>
+        </member>
+        <member name="M:MTDClasses.Train.#ctor(System.Int32)">
+            <summary>
+            Train - Overloaded Constructor - Accepts an int and sets it as engineValue
+            </summary>
+            <param name="engineValue">int - starting engine value</param>
+        </member>
+        <member name="M:MTDClasses.Train.IsPlayable(MTDClasses.Domino,System.Boolean@)">
+            <summary>
+            IsPlayable - Returns a Boolean whether the domino passed to it can be played on the train
+            </summary>
+            <param name="d">Domino</param>
+            <param name="mustFlip">Boolean if it needs flipped</param>
+            <returns></returns>
+        </member>
+        <member name="M:MTDClasses.Train.Add(MTDClasses.Domino)">
+            <summary>
+            Add - Passes a Domino into the train
+            </summary>
+            <param name="d">domino</param>
+        </member>
+        <member name="M:MTDClasses.Train.Play(MTDClasses.Domino)">
+            <summary>
+            Play - Does not return anything - assumes you have already checked the domino
+            </summary>
+            <param name="d">domino</param>
+        </member>
+    </members>
+</doc>

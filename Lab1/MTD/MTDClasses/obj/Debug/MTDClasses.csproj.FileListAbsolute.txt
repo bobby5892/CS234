@@ -1,0 +1,14 @@
+C:\Users\Rob\Documents\CS234\Lab0\mexicantraindominos-bobby5892-2\MTD\MTDClasses\bin\Debug\MTDClasses.dll
+C:\Users\Rob\Documents\CS234\Lab0\mexicantraindominos-bobby5892-2\MTD\MTDClasses\bin\Debug\MTDClasses.pdb
+C:\Users\Rob\Documents\CS234\Lab0\mexicantraindominos-bobby5892-2\MTD\MTDClasses\obj\Debug\MTDClasses.csprojResolveAssemblyReference.cache
+C:\Users\Rob\Documents\CS234\Lab0\mexicantraindominos-bobby5892-2\MTD\MTDClasses\obj\Debug\MTDClasses.csproj.CoreCompileInputs.cache
+C:\Users\Rob\Documents\CS234\Lab0\mexicantraindominos-bobby5892-2\MTD\MTDClasses\obj\Debug\MTDClasses.dll
+C:\Users\Rob\Documents\CS234\Lab0\mexicantraindominos-bobby5892-2\MTD\MTDClasses\obj\Debug\MTDClasses.pdb
+C:\Users\Rob\Documents\CS234\Lab0\mexicantraindominos-bobby5892-2\MTD\MTDClasses\bin\Debug\MTDClasses.xml
+C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDClasses\bin\Debug\MTDClasses.xml
+C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDClasses\bin\Debug\MTDClasses.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDClasses\bin\Debug\MTDClasses.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDClasses\obj\Debug\MTDClasses.csprojResolveAssemblyReference.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDClasses\obj\Debug\MTDClasses.csproj.CoreCompileInputs.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDClasses\obj\Debug\MTDClasses.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDClasses\obj\Debug\MTDClasses.pdb
