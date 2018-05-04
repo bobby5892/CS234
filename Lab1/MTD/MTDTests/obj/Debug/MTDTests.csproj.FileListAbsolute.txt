@@ -23,3 +23,16 @@ C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicant
 C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDTests\obj\Debug\MTDTests.csproj.CopyComplete
 C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDTests\obj\Debug\MTDTests.dll
 C:\Users\Rob\Documents\CS234\CS234\Lab1\mexicantraindominos-bobby5892-2\mexicantraindominos-bobby5892-2\MTD\MTDTests\obj\Debug\MTDTests.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDTests\bin\Debug\MTDTests.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDTests\bin\Debug\MTDTests.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDTests\bin\Debug\MTDClasses.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDTests\bin\Debug\nunit.framework.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDTests\bin\Debug\MTDClasses.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDTests\bin\Debug\MTDClasses.xml
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDTests\bin\Debug\nunit.framework.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDTests\bin\Debug\nunit.framework.xml
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDTests\obj\Debug\MTDTests.csprojResolveAssemblyReference.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDTests\obj\Debug\MTDTests.csproj.CoreCompileInputs.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDTests\obj\Debug\MTDTests.csproj.CopyComplete
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDTests\obj\Debug\MTDTests.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab1\MTD\MTDTests\obj\Debug\MTDTests.pdb

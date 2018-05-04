@@ -32,6 +32,27 @@ namespace MTDTests
           
 
         }
+        /// <summary>
+        /// Design an nUnit unit test that ensures that playing a Domino that contains 
+        /// the PlayableValue for a (Mexican or Public) Train can be 
+        /// played AND that the PlayableValue and Count are updated appropriately.
+        /// </summary>
+        [Test]
+        public void midtermTestTrain()
+        {
+            //Set the train
+            this.trainWithEngine.EngineValue = 6;
+            // Play a 6 that needs flipped
+            this.trainWithEngine.Play(this.d3n6);
+
+            // nowPlayable Value
+            Assert.AreEqual(3, this.trainWithEngine.PlayableValue);
+
+            // Check the Count
+            Assert.AreEqual(1, this.trainWithEngine.Count);
+
+
+        }
         [Test]
         public void TrainTestsDefault()
         {
@@ -88,5 +109,6 @@ namespace MTDTests
             this.d1n1 = new Domino(1, 1);
             Assert.Throws<ArgumentException>(delegate { this.trainWithEngine.Play(d1n1); });
         }
+
     }
 }

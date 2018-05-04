@@ -57,12 +57,14 @@ namespace MTDUserInterface
         private const int COMPUTER = 0;
         private const int USER = 1;
 
+        // User click handlers enabled
+        private bool userClickHandlersEnabled;
         // Create the dominos for the user to be able to interact with.
-        List<DominoOnTable> TableDominos = new List<DominoOnTable>();
+        List<DominoOnTable> tableDominos = new List<DominoOnTable>();
 
 
         #region Methods
-        
+
         /*
         // loads the image of a domino into a picture box
         // verify that the path for the domino files is correct
@@ -111,11 +113,6 @@ namespace MTDUserInterface
             pb.MouseDown -= new System.Windows.Forms.MouseEventHandler(this.handPB_MouseDown);
         }
 
-        // removes all of the mouse down event handlers from the picture boxes in the users hand pb list
-        private void DisableUserHandPBs()
-        {
-
-        }
 
         // unloads the domino image from a picture box in a train
         public void RemoveDominoFromTrainPB(int index, List<PictureBox> trainPBs)
@@ -186,11 +183,6 @@ namespace MTDUserInterface
 
         }
 
-        // enable the hand pbs, buttons and update labels on the UI
-        public void EnableUserMove()
-        {
-
-        }
 
         // instantiate boneyard and hands
         // find the highest double in each hand
@@ -219,8 +211,10 @@ namespace MTDUserInterface
 
         public PlayMTDRightClick()
         {
+            this.userClickHandlersEnabled = true;
             InitializeComponent();
             this.SetUp();
+            
         }
         private void SetUp()
         {
@@ -248,6 +242,7 @@ namespace MTDUserInterface
 
 
             // Create the Draggable Player Hand
+            this.buildDraggable();
             this.drawDraggable();
 
             // Figure out who has the highest double
@@ -260,11 +255,12 @@ namespace MTDUserInterface
         /// This is for the player hand and will allow the dominos to be moved around. It uses the domios that are tied to a picture box.
         /// 
         /// </summary>
-        private void drawDraggable()
+        private void buildDraggable()
         {
             int startingX = 10;
-            int startingY = 600;
-            int columns = 8;
+            int startingY = 375;
+            int columns = 5;
+            int columnWidth = 70;
             // Lets Populate Our List
             for(int i=0; i < this.userHand.Count; i++)
             {
@@ -273,23 +269,50 @@ namespace MTDUserInterface
                 tableDom.picture = this.userHandPBs[i];
 
                 // Now Lets give the picturebox render dimensions
-                tableDom.picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+              
+                tableDom.picture.BorderStyle = System.Windows.Forms.BorderStyle.None;
                 tableDom.picture.Location = new System.Drawing.Point(startingX, startingY);
-                tableDom.picture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+                
                 tableDom.picture.Name = tableDom.domino.ToString();
-                tableDom.picture.Size = new System.Drawing.Size(149, 76);
+                tableDom.picture.Size = new System.Drawing.Size(65, 45);
+                tableDom.picture.Visible = true;
                 tableDom.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                startingX += 150;
+                tableDom.picture.Anchor = AnchorStyles.None;
+                tableDom.picture.BackColor = Color.Transparent;
+                tableDom.picture.Click += new System.EventHandler(this.passButton_Click);
+
+
+                // Add it to form
+                this.Controls.Add(tableDom.picture);
+                
+                startingX += columnWidth;
 
                 // If the number of tiles is more than the # of columns then go down a row
-                if(startingX > columns*startingX)
+                if(startingX >= columns* columnWidth)
                 {
                     startingX = 10;
-                    startingY += 80;
+                    startingY += 50;
                 }
-                this.TableDominos.Add(tableDom);
+                // List of Dominos on the TAble for hand
+                this.tableDominos.Add(tableDom);
             }
           
+        }
+        public void drawDraggable()
+        {
+
+        }
+        // removes all of the mouse down event handlers from the picture boxes in the users hand pb list
+        private void DisableUserHandPBs()
+        {
+          
+          //  tableDom.picture.Click += new System.EventHandler(this.passButton_Click);
+        }
+
+        // enable the hand pbs, buttons and update labels on the UI
+        public void EnableUserMove()
+        {
+
         }
         private void TearDown()
         {
@@ -427,11 +450,18 @@ namespace MTDUserInterface
             // empty the list
             box.Clear();
             // Add the dominos from hand
-            for (int i = hand.Count; i > 0; i--)
+            for (int i = hand.Count-1; i >= 0; i--)
             {
                 // Create the domino
                 PictureBox newPic = new PictureBox();
-                newPic.ImageLocation = "dominos/d" + hand[i].Side1 + hand[i].Side2 + ".png";
+              
+              
+                
+                newPic.Name = "pic" + i;
+               
+                // newPic.ImageLocation = "dominos/d" + hand[i].Side1 + hand[i].Side2 + ".png";
+                newPic.ImageLocation = "Images/" + hand[i].Filename;
+                this.Controls.Add(newPic);
 
                 // add it to the list
                 box.Add(newPic);
@@ -447,7 +477,7 @@ namespace MTDUserInterface
             {
                 // Create the domino
                 PictureBox newPic = new PictureBox();
-                newPic.ImageLocation = "dominos/d" + train[i].Side1 + train[i].Side2 + ".png";
+                newPic.ImageLocation = "Images/" + train[i].Filename;
 
                 // add it to the list
                 box.Add(newPic);
@@ -458,3 +488,4 @@ namespace MTDUserInterface
   
     }
 }
+

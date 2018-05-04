@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace MTDClasses
 {
     [Serializable()]
-    public class Domino
+    public class Domino : IComparable, IComparer<Domino>
     {
         private int side1;
         private int side2;
@@ -124,6 +124,30 @@ namespace MTDClasses
         public override int GetHashCode()
         {
             return ToString().GetHashCode();
+        }
+
+        public int CompareTo(object obj)
+        {
+            // If it doesn't exist
+            if (obj == null) {
+                return -1;
+            }
+            // We're dealing with Dominos
+            Domino dom = (Domino) obj;
+            return dom.Score;
+        }
+
+        public int Compare(Domino x, Domino y)
+        {
+            // Greater than
+            if (x.Score > y.Score)
+                return 1;
+            // Less than
+            if (x.Score < y.Score)
+                return -1;
+            /// Equal T 
+            else
+                return 0;
         }
     }
 }

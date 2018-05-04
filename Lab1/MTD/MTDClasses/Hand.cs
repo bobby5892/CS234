@@ -64,7 +64,7 @@ namespace MTDClasses
         {
             get
             {
-                if(index <= this.Count)
+                if(index < this.Count)
                 {
                     return this.handOfDominos[index];
                 }
@@ -97,7 +97,9 @@ namespace MTDClasses
         /// </summary>
         public Domino Draw(BoneYard by)
         {
-            return by.Draw();
+            Domino d = by.Draw();
+            this.Add(d);
+            return d;
         }
 
         // IndexOfDomino (int pipValue) -- int
