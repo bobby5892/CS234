@@ -53,7 +53,7 @@ namespace MTDUserInterface
         private int nextDrawIndex = 15;
 
         private int whosTurn = -1;
-        private const int NUMBEROFPLAYERS = 3;
+        private const int NUMBEROFPLAYERS = 2;
         private const int COMPUTER = 0;
         private const int USER = 1;
 
@@ -246,10 +246,79 @@ namespace MTDUserInterface
             this.drawDraggable();
 
             // Figure out who has the highest double
-
+            this.playHighestDouble();
             // Play that in the corner
             // Test from ME PC
             
+        }
+        /// <summary>
+        /// Private - Play the highest double
+        /// </summary>
+        private void playHighestDouble()
+        {
+            Domino highest = null;
+            int foundHighestIn = 0; // 0 - noboy , 1 computer, 2, player
+            
+            // Determine highest
+            for(int i=0; i < computerHand.Count; i++)
+            {
+                if (computerHand[i].IsDouble())
+                {
+                    if ((highest == null) || (highest.Score < computerHand[i].Score))
+                    {
+                        highest = computerHand[i];
+                        foundHighestIn = 1;
+                    }
+                }
+
+            }
+            // Look in the uer hand
+            for(int i=0; i < tableDominos.Count; i++)
+            {
+                if (tableDominos[i].domino.IsDouble()){
+                    if ((highest == null) || (highest.Score < tableDominos[i].domino.Score))
+                    {
+                        highest = tableDominos[i].domino;
+                        foundHighestIn = 2;
+                    }
+                }
+            }
+            // Found in computer
+            if (foundHighestIn == 1)
+            {
+                int toRemove = computerHand.IndexOfDomino(highest.Side1);
+                Domino dom = computerHand.GetDomino(highest.Side1);
+                computerHand.RemoveAt(toRemove);
+                // Computer goes first
+                this.whosTurn = 0;
+            }
+            // Found in player
+            else if (foundHighestIn == 2)
+            {
+
+                for (int i = 0; i < tableDominos.Count; i++) {
+                    if (tableDominos[i].domino == highest)
+                    {
+                        Domino dom = tableDominos[i].domino;
+                        tableDominos.RemoveAt(i);
+                        // Player goes first
+                        this.whosTurn = 1;
+                        break;
+                    }
+                }
+                
+            }
+            else
+            {
+                throw new System.ArgumentException("Not implemented - should redo teardown / setup - but this is academic...");
+            }
+
+            // Now that highest domino has been found and removed from either a player or computer - lets put it where it goes and set the trains
+            enginePB.ImageLocation = "Images/" + highest.Filename;
+            // Now lets set the trains up
+            this.userTrain.EngineValue = highest.Side1;
+            this.computerTrain.EngineValue = highest.Side1;
+            this.mexicanTrain.EngineValue = highest.Side1;
         }
         /// <summary>
         /// This is for the player hand and will allow the dominos to be moved around. It uses the domios that are tied to a picture box.
@@ -316,16 +385,53 @@ namespace MTDUserInterface
         }
         private void TearDown()
         {
+            // Remove all Dominos from the board
+            //  CAnt just clear this - have to iterate and remove from board the PB's in it. 
+            for(int i = 0; i < this.tableDominos.Count; i++)
+            {
+                this.Controls.Remove(tableDominos[i].picture);
+            }
+            this.tableDominos.Clear();
+            // Dont have to worry - setup will reinstatiate this.userHand
+            // Same with computerHand
+
+            this.clearPictureBoxList(this.userHandPBs);
+            this.userHandPBs.Clear();
+
+            this.clearPictureBoxList(this.mexicanTrainPBs);
+            this.mexicanTrainPBs.Clear();
+
+            this.clearPictureBoxList(this.userTrainPBs);
+            this.userTrainPBs.Clear();
+
+            this.clearPictureBoxList(this.computerTrainPBs);
+            this.computerTrainPBs.Clear();
+
+            this.enginePB.ImageLocation = null;
+            // trains get wiped - no biggy
+         
+
             indexOfDominoInPlay = -1;
             whosTurn = -1;
             nextDrawIndex = 15;
         }
+        
+        private void clearPictureBoxList(List<PictureBox> list)
+        {
+            for(int i = 0; i < list.Count; i++)
+            {
+                list[i].ImageLocation = null;
+            }
+        }
+        
         #region event handlers
+
 
 
         // when the user right clicks on a domino, a context sensitive menu appears that
         // let's the user know which train is playable.  Green means playable.  Red means not playable.
         // the event handler for the menu item is enabled and disabled appropriately.
+
         private void whichTrainMenu_Opening(object sender, CancelEventArgs e)
         {
             /*
@@ -402,7 +508,39 @@ namespace MTDUserInterface
         // draw a domino, add it to the hand, create a new pb and enable the new pb
         private void drawButton_Click(object sender, EventArgs e)
         {
+            bool hasPlayableDomino = false;
+            if(this.whosTurn == 1)
+            {
+                string playWhere = "";
+                // Check to see if player can play
+                for(int i = 0; i < this.tableDominos.Count; i++)
+                {
+                    if(this.mexicanTrain.IsPlayable(this.tableDominos[i].domino, out bool flip)){
+                        hasPlayableDomino = true;
+                        playWhere = " Mexican Train";
+                    }
+                    if (this.computerTrain.IsPlayable(this.tableDominos[i].domino, out bool flip2))
+                    {
+                        hasPlayableDomino = true;
+                        playWhere = " Computer Train";
+                    }
+                    if (this.userTrain.IsPlayable(this.tableDominos[i].domino, out bool flip3))
+                    {
+                        hasPlayableDomino = true;
+                        playWhere = " Your Train";
+                    }
+                }
 
+                if (hasPlayableDomino)
+                {
+                    MessageBox.Show("You can't draw, you have a playable domino on the " + playWhere);
+                }
+                else
+                {
+                    // Draw a tile
+
+                }
+            }
         }
 
         // open the user's train, update the ui and let the computer make a move
@@ -432,8 +570,6 @@ namespace MTDUserInterface
             this.showLastFive(this.computerTrainPBs, compTrainPB1, compTrainPB2, compTrainPB3, compTrainPB4, compTrainPB5);
             this.showLastFive(this.mexicanTrainPBs, mexTrainPB1, mexTrainPB2, mexTrainPB3, mexTrainPB4, mexTrainPB5);
 
-
-
         }
         private void showLastFive(List<PictureBox> boxes, PictureBox pb1, PictureBox pb2, PictureBox pb3, PictureBox pb4,
             PictureBox pb5)
@@ -454,8 +590,6 @@ namespace MTDUserInterface
             {
                 // Create the domino
                 PictureBox newPic = new PictureBox();
-              
-              
                 
                 newPic.Name = "pic" + i;
                

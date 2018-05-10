@@ -79,7 +79,7 @@
         </member>
         <member name="M:MTDClasses.Hand.GetDomino(System.Int32)">
             <summary>
-            GetDomino - Returns an Int of the Index Position of the domino
+            GetDomino - Returns an Domino of the Index Position of the domino
             </summary>
             <param name="pipValue">int - the number of dots onthe domino</param>
             <returns></returns>

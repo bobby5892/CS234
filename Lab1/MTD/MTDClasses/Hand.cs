@@ -166,7 +166,7 @@ namespace MTDClasses
 
 
         /// <summary>
-        /// GetDomino - Returns an Int of the Index Position of the domino
+        /// GetDomino - Returns an Domino of the Index Position of the domino
         /// </summary>
         /// <param name="pipValue">int - the number of dots onthe domino</param>
         /// <returns></returns>
@@ -245,7 +245,7 @@ namespace MTDClasses
         /// </summary>
         /// <param name="pipValue">int - how many dots</param>
         /// <returns></returns>
-        bool HasDomino(int pipValue)
+        public bool HasDomino(int pipValue)
         {
             for(int i = 0; i < this.Count; i++)
             {
@@ -261,7 +261,7 @@ namespace MTDClasses
         /// </summary>
         /// <param name="d">Domino </param>
         /// <param name="t">Train</param>
-        void Play(Domino d, Train t)
+        public void Play(Domino d, Train t)
         {
             t.Play(d);
         }
@@ -271,7 +271,7 @@ namespace MTDClasses
         /// </summary>
         /// <param name="index"></param>
         /// <param name="t"></param>
-        void Play(int index, Train t)
+        public void Play(int index, Train t)
         {
             t.Play(this.handOfDominos[index]);
         }
@@ -280,7 +280,7 @@ namespace MTDClasses
         /// RemoveAt - Deletes a domino from the hand (Not Recommended)
         /// </summary>
         /// <param name="index">int - the location in hand to delete</param>
-        void RemoveAt(int index)
+        public void RemoveAt(int index)
         {
             this.handOfDominos.RemoveAt(index);
         }
