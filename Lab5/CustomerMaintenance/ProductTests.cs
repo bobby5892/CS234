@@ -11,6 +11,8 @@ namespace CustomerMaintenance
     public class ProductTests
     {
         Product testProduct;
+        Product testProduct2;
+
         [SetUp]
         public void SetUpAllTests()
         {
@@ -19,6 +21,12 @@ namespace CustomerMaintenance
             testProduct.Description = "Murach's JavaScript (2nd Edition)";
             testProduct.UnitPrice = 54.50m;
             testProduct.OnHandQuantity = 6937;
+
+            this.testProduct2 = new Product();
+            testProduct2.ProductCode = "2JST";
+            testProduct2.Description = "TESTMurach's JavaScript (2nd Edition)";
+            testProduct2.UnitPrice = 54.50m;
+            testProduct2.OnHandQuantity = 6937;
 
         }
 
@@ -43,7 +51,15 @@ namespace CustomerMaintenance
         [Test, Order(3)]
         public void InsertProduct()
         {
+           
             Assert.True(ProductDB.AddProduct(this.testProduct));
+        }
+        [Test, Order(4)]
+        public void UpdateProduct()
+        {
+
+            Assert.True(ProductDB.UpdateProduct(this.testProduct, this.testProduct2));
+            Assert.True(ProductDB.UpdateProduct(this.testProduct2, this.testProduct));
         }
 
     }

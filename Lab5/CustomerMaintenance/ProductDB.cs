@@ -58,13 +58,16 @@ namespace CustomerMaintenance
                 "Description = @newDescription, " +
                 "UnitPrice = @newUnitPrice, " +
                 "OnHandQuantity = @newOnHandQuantity " +
-                "WHERE ProductCode = @newProductCode " +
+                "WHERE ProductCode = @oldProductCode " +
                 "AND Description = @OldDescription " +
                 "AND UnitPrice = @OldUnitPrice " +
                 "AND OnHandQuantity = @OldOnHandQuantity ";
                
             SqlCommand updateCommand =
                 new SqlCommand(updateStatement, connection);
+
+            updateCommand.Parameters.AddWithValue(
+                "@oldProductCode", oldProduct.ProductCode);
             updateCommand.Parameters.AddWithValue(
                 "@newDescription", newProduct.Description);
             updateCommand.Parameters.AddWithValue(
