@@ -1,0 +1,16 @@
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\bin\Debug\Lab6Tests.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\bin\Debug\Lab6Tests.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\bin\Debug\Lab6PropsClasses.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\bin\Debug\nunit.framework.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\bin\Debug\ToolsCSharp.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\bin\Debug\Lab6PropsClasses.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\bin\Debug\nunit.framework.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\bin\Debug\nunit.framework.xml
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\bin\Debug\ToolsCSharp.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\obj\Debug\Lab6Tests.csprojResolveAssemblyReference.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\obj\Debug\Lab6Tests.csproj.CoreCompileInputs.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\obj\Debug\Lab6Tests.csproj.CopyComplete
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\obj\Debug\Lab6Tests.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\obj\Debug\Lab6Tests.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\bin\Debug\Lab6DBClasses.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6Tests\bin\Debug\Lab6DBClasses.pdb

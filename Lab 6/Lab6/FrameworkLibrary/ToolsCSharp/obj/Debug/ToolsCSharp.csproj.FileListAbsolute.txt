@@ -1,0 +1,6 @@
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\FrameworkLibrary\ToolsCSharp\bin\Debug\ToolsCSharp.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\FrameworkLibrary\ToolsCSharp\bin\Debug\ToolsCSharp.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\FrameworkLibrary\ToolsCSharp\obj\Debug\ToolsCSharp.csprojResolveAssemblyReference.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\FrameworkLibrary\ToolsCSharp\obj\Debug\ToolsCSharp.csproj.CoreCompileInputs.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\FrameworkLibrary\ToolsCSharp\obj\Debug\ToolsCSharp.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\FrameworkLibrary\ToolsCSharp\obj\Debug\ToolsCSharp.pdb

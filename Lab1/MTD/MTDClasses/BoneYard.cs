@@ -44,11 +44,17 @@ namespace MTDClasses
             // This needs to fil the List and update the Dominos Remaining
             // 0-12
             this.generateBoneyard(12);
+            this.Shuffle();
+            this.Shuffle();
+            this.Shuffle();
 
         }
         public BoneYard(int maxDots){
             // This needs to fil the List and update the Dominos Remaining
             this.generateBoneyard(maxDots);
+            this.Shuffle();
+            this.Shuffle();
+            this.Shuffle();
         }
         private void generateBoneyard(int maxDots){
             // For each set

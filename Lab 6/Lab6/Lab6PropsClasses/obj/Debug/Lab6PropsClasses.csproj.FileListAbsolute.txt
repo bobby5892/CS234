@@ -1,0 +1,12 @@
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6PropsClasses\bin\Debug\Lab6PropsClasses.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6PropsClasses\bin\Debug\Lab6PropsClasses.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6PropsClasses\bin\Debug\nunit.framework.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6PropsClasses\bin\Debug\ToolsCSharp.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6PropsClasses\bin\Debug\ToolsCSharp.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6PropsClasses\bin\Debug\nunit.framework.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6PropsClasses\bin\Debug\nunit.framework.xml
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6PropsClasses\obj\Debug\Lab6PropsClasses.csprojResolveAssemblyReference.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6PropsClasses\obj\Debug\Lab6PropsClasses.csproj.CoreCompileInputs.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6PropsClasses\obj\Debug\Lab6PropsClasses.csproj.CopyComplete
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6PropsClasses\obj\Debug\Lab6PropsClasses.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\Lab6PropsClasses\obj\Debug\Lab6PropsClasses.pdb
