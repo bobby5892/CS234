@@ -67,8 +67,8 @@ namespace Lab6PropsClasses
             this.address = (string)dr["Address"];
             this.city = (string)dr["City"];
             this.state = (string)dr["State"];
-            this.zipCode = (string)dr["zipCode"];
-
+            this.zipCode = (string)dr["ZipCode"];
+            this.ConcurrencyID = (int)dr["ConcurrencyID"];
         }
 
         /// <summary>

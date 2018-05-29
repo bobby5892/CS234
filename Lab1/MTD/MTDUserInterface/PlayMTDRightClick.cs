@@ -248,8 +248,9 @@ namespace MTDUserInterface
             // Figure out who has the highest double
             this.playHighestDouble();
             // Play that in the corner
+
             // Test from ME PC
-            
+            whosTurn = 1;
         }
         /// <summary>
         /// Private - Play the highest double
@@ -348,8 +349,8 @@ namespace MTDUserInterface
                 tableDom.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                 tableDom.picture.Anchor = AnchorStyles.None;
                 tableDom.picture.BackColor = Color.Transparent;
-                tableDom.picture.Click += new System.EventHandler(this.passButton_Click);
-
+                tableDom.picture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.handPB_MouseDown);
+                
 
                 // Add it to form
                 this.Controls.Add(tableDom.picture);
@@ -409,13 +410,19 @@ namespace MTDUserInterface
 
             this.enginePB.ImageLocation = null;
             // trains get wiped - no biggy
-         
+            this.disposeTableDoms();
 
             indexOfDominoInPlay = -1;
             whosTurn = -1;
             nextDrawIndex = 15;
         }
-        
+        private void disposeTableDoms()
+        {
+            for(int i=0; i < tableDominos.Count; i++)
+            {
+                tableDominos[i].picture.Dispose();
+            }
+        }
         private void clearPictureBoxList(List<PictureBox> list)
         {
             for(int i = 0; i < list.Count; i++)
@@ -428,13 +435,13 @@ namespace MTDUserInterface
 
 
 
-        // when the user right clicks on a domino, a context sensitive menu appears that
+        // when the user left clicks on a domino, a context sensitive menu appears that
         // let's the user know which train is playable.  Green means playable.  Red means not playable.
         // the event handler for the menu item is enabled and disabled appropriately.
 
         private void whichTrainMenu_Opening(object sender, CancelEventArgs e)
         {
-            /*
+            
             bool mustFlip = false;
             if (userDominoInPlay != null)
             {
@@ -451,29 +458,59 @@ namespace MTDUserInterface
                 {
                     mexicanTrainItem.ForeColor = Color.Red;
                 } 
-                // check other trains too
+                
+               if (computerTrain.IsPlayable(userDominoInPlay, out mustFlip))
+                {
+                    computerTrainItem.ForeColor = Color.Green;
+                    computerTrainItem.Click += new System.EventHandler(this.computerTrainItem_Click);
+                }
+                else
+                {
+                    computerTrainItem.ForeColor = Color.Red;
+                }
+                if (userTrain.IsPlayable(userDominoInPlay, out mustFlip))
+                {
+                    myTrainItem.ForeColor = Color.Green;
+                    myTrainItem.Click += new System.EventHandler(this.myTrainItem_Click);
+                }
+                else
+                {
+                    myTrainItem.ForeColor = Color.Red;
+                }
+               
+                
 
             }
-            */
+           
         }
 
         // displays the context sensitve menu with the list of trains
         // sets the instance variables indexOfDominoInPlay and userDominoInPlay
         private void handPB_MouseDown(object sender, MouseEventArgs e)
         {
-            /*
+           
             PictureBox handPB = (PictureBox)sender;
-            indexOfDominoInPlay = userHandPBs.IndexOf(handPB);
-            if (indexOfDominoInPlay != -1)
+            
+            for(int i = 0; i < tableDominos.Count; i++)
             {
-                userDominoInPlay = userHand[indexOfDominoInPlay];
-                if (e.Button == MouseButtons.Right)
+                if(handPB == tableDominos[i].picture)
                 {
-                    whichTrainMenu.Show(handPB, 
-                        handPB.Size.Width - 20, handPB.Size.Height - 20);
+                    indexOfDominoInPlay = i;
+                    break;
                 }
             }
-            */
+            
+            if (indexOfDominoInPlay != -1)
+            {
+                userDominoInPlay = tableDominos[indexOfDominoInPlay].domino;
+                PictureBox pb = tableDominos[indexOfDominoInPlay].picture;
+                if (e.Button == MouseButtons.Right)
+                {
+                    whichTrainMenu.Show(pb, 
+                        pb.Size.Width - 20, pb.Size.Height - 20);
+                }
+            }
+           
         }
 
         // play on the mexican train, lets the computer take a move and then enables
@@ -481,21 +518,34 @@ namespace MTDUserInterface
         // userDominoInPlay contains the domino that was clicked
         private void mexicanTrainItem_Click(object sender, EventArgs e)
         {
-
+            
+            Domino d = tableDominos[indexOfDominoInPlay].domino;
+            tableDominos[indexOfDominoInPlay].picture.Visible = false;
+            tableDominos.RemoveAt(indexOfDominoInPlay);
+            mexicanTrain.Play(d);
+            redraw();
         }
 
         // play on the computer train, lets the computer take a move and then enables
         // hand pbs so the user can make the next move.
         private void computerTrainItem_Click(object sender, EventArgs e)
         {
-
+            Domino d = tableDominos[indexOfDominoInPlay].domino;
+            tableDominos[indexOfDominoInPlay].picture.Visible = false;
+            tableDominos.RemoveAt(indexOfDominoInPlay);
+            computerTrain.Play(d);
+            redraw();
         }
 
         // play on the user train, lets the computer take a move and then enables
         // hand pbs so the user can make the next move.
         private void myTrainItem_Click(object sender, EventArgs e)
         {
-
+            Domino d = tableDominos[indexOfDominoInPlay].domino;
+            tableDominos[indexOfDominoInPlay].picture.Visible = false;
+            tableDominos.RemoveAt(indexOfDominoInPlay);
+            userTrain.Play(d);
+            redraw();
         }
 
         // tear down and then set up
@@ -551,7 +601,19 @@ namespace MTDUserInterface
         }
 
         #endregion
-    
+        private void redraw()
+        {
+            // Clear all PB's
+            this.clearPictureBoxList(this.userHandPBs);
+            this.mexicanTrainPBs.Clear();
+            this.userTrainPBs.Clear();
+            this.computerTrainPBs.Clear();
+            this.disposeTableDoms();
+            this.fillPictureBoxes();
+            // Create the Draggable Player Hand
+            this.buildDraggable();
+            this.drawDraggable();
+        }
         private void PlayMTDRightClick_Load(object sender, EventArgs e)
         {
 
@@ -561,18 +623,18 @@ namespace MTDUserInterface
             // Build List of Picture Box for Hand
             this.fillPictureBoxFromHand(this.userHand, this.userHandPBs);
             // Build List of Picture Box for Trains
-            this.fillPictureBoxFromTrain(this.userTrain, this.userTrainPBs);
-            this.fillPictureBoxFromTrain(this.computerTrain, this.computerTrainPBs);
-            this.fillPictureBoxFromTrain(this.mexicanTrain, this.mexicanTrainPBs);
+            this.fillPictureBoxFromTrain(this.userTrain,ref this.userTrainPBs);
+            this.fillPictureBoxFromTrain(this.computerTrain,ref this.computerTrainPBs);
+            this.fillPictureBoxFromTrain(this.mexicanTrain,ref this.mexicanTrainPBs);
 
             // Now lets grab the last 5 from each for the trains
-            this.showLastFive(this.mexicanTrainPBs,mexTrainPB1,mexTrainPB2,mexTrainPB3,mexTrainPB4,mexTrainPB5);
-            this.showLastFive(this.computerTrainPBs, compTrainPB1, compTrainPB2, compTrainPB3, compTrainPB4, compTrainPB5);
-            this.showLastFive(this.mexicanTrainPBs, mexTrainPB1, mexTrainPB2, mexTrainPB3, mexTrainPB4, mexTrainPB5);
+            this.showLastFive(ref this.mexicanTrainPBs,ref mexTrainPB1,ref mexTrainPB2,ref mexTrainPB3,ref mexTrainPB4,ref mexTrainPB5);
+            this.showLastFive(ref this.computerTrainPBs, ref compTrainPB1, ref compTrainPB2,ref  compTrainPB3, ref compTrainPB4,ref compTrainPB5);
+            this.showLastFive(ref this.mexicanTrainPBs,ref mexTrainPB1,ref mexTrainPB2,ref mexTrainPB3, ref mexTrainPB4,ref mexTrainPB5);
 
         }
-        private void showLastFive(List<PictureBox> boxes, PictureBox pb1, PictureBox pb2, PictureBox pb3, PictureBox pb4,
-            PictureBox pb5)
+        private void showLastFive(ref List<PictureBox> boxes,ref PictureBox pb1,ref PictureBox pb2, ref PictureBox pb3,ref PictureBox pb4,
+           ref PictureBox pb5)
         {
             // The order of this may need ADJUSTEd
            if(boxes.Count >= 5) { pb5 = boxes[boxes.Count - 5]; }
@@ -586,7 +648,7 @@ namespace MTDUserInterface
             // empty the list
             box.Clear();
             // Add the dominos from hand
-            for (int i = hand.Count-1; i >= 0; i--)
+            for (int i =0; i < hand.Count; i++)
             {
                 // Create the domino
                 PictureBox newPic = new PictureBox();
@@ -602,7 +664,7 @@ namespace MTDUserInterface
                 
             }
         }
-        private void fillPictureBoxFromTrain(Train train, List<PictureBox> box)
+        private void fillPictureBoxFromTrain(Train train,ref List<PictureBox> box)
         {
             // empty the list
             box.Clear();

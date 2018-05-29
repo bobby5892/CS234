@@ -1,0 +1,13 @@
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\lab6classes\bin\Debug\lab6classes.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\lab6classes\bin\Debug\lab6classes.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\lab6classes\bin\Debug\Lab6DBClasses.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\lab6classes\bin\Debug\Lab6PropsClasses.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\lab6classes\bin\Debug\ToolsCSharp.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\lab6classes\bin\Debug\ToolsCSharp.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\lab6classes\bin\Debug\Lab6DBClasses.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\lab6classes\bin\Debug\Lab6PropsClasses.pdb
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\lab6classes\obj\Debug\lab6classes.csprojResolveAssemblyReference.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\lab6classes\obj\Debug\lab6classes.csproj.CoreCompileInputs.cache
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\lab6classes\obj\Debug\lab6classes.csproj.CopyComplete
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\lab6classes\obj\Debug\lab6classes.dll
+C:\Users\Rob\Documents\CS234\CS234\Lab 6\Lab6\lab6classes\obj\Debug\lab6classes.pdb

@@ -257,7 +257,7 @@ namespace EventDBClasses
             int rowsAffected = 0;
 
             DBCommand command = new DBCommand();
-            command.CommandText = "usp_EventStaticDelete";
+            command.CommandText = "usp_ProductsDelete";
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@EventID", SqlDbType.Int);
             command.Parameters["@EventID"].Value = key;

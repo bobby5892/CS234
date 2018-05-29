@@ -68,7 +68,7 @@ namespace Lab6PropsClasses
             public void SetState(DBDataReader dr)
             {
                 this.ID = (Int32)dr["ProductID"];
-                this.code = (string)dr["ProductCode"];
+                this.code = ((string)dr["ProductCode"]).Trim();
                 this.description = (string)dr["Description"];
                 this.unitPrice = (decimal)dr["UnitPrice"];
                 this.quantity = (int)dr["OnHandQuantity"];
