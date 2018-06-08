@@ -50,90 +50,102 @@
             // ZipCodeLabel
             // 
             ZipCodeLabel.AutoSize = true;
-            ZipCodeLabel.Location = new System.Drawing.Point(255, 99);
+            ZipCodeLabel.Location = new System.Drawing.Point(382, 152);
+            ZipCodeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             ZipCodeLabel.Name = "ZipCodeLabel";
-            ZipCodeLabel.Size = new System.Drawing.Size(52, 13);
+            ZipCodeLabel.Size = new System.Drawing.Size(74, 20);
             ZipCodeLabel.TabIndex = 8;
             ZipCodeLabel.Text = "Zip code:";
             // 
             // StateNameLabel
             // 
             StateNameLabel.AutoSize = true;
-            StateNameLabel.Location = new System.Drawing.Point(19, 99);
+            StateNameLabel.Location = new System.Drawing.Point(28, 152);
+            StateNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             StateNameLabel.Name = "StateNameLabel";
-            StateNameLabel.Size = new System.Drawing.Size(35, 13);
+            StateNameLabel.Size = new System.Drawing.Size(52, 20);
             StateNameLabel.TabIndex = 6;
             StateNameLabel.Text = "State:";
             // 
             // CityLabel
             // 
             CityLabel.AutoSize = true;
-            CityLabel.Location = new System.Drawing.Point(19, 73);
+            CityLabel.Location = new System.Drawing.Point(28, 112);
+            CityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             CityLabel.Name = "CityLabel";
-            CityLabel.Size = new System.Drawing.Size(27, 13);
+            CityLabel.Size = new System.Drawing.Size(39, 20);
             CityLabel.TabIndex = 4;
             CityLabel.Text = "City:";
             // 
             // Address1Label
             // 
             Address1Label.AutoSize = true;
-            Address1Label.Location = new System.Drawing.Point(19, 47);
+            Address1Label.Location = new System.Drawing.Point(28, 72);
+            Address1Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Address1Label.Name = "Address1Label";
-            Address1Label.Size = new System.Drawing.Size(48, 13);
+            Address1Label.Size = new System.Drawing.Size(72, 20);
             Address1Label.TabIndex = 2;
             Address1Label.Text = "Address:";
             // 
             // NameLabel
             // 
             NameLabel.AutoSize = true;
-            NameLabel.Location = new System.Drawing.Point(19, 21);
+            NameLabel.Location = new System.Drawing.Point(28, 32);
+            NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             NameLabel.Name = "NameLabel";
-            NameLabel.Size = new System.Drawing.Size(38, 13);
+            NameLabel.Size = new System.Drawing.Size(55, 20);
             NameLabel.TabIndex = 0;
             NameLabel.Text = "Name:";
             // 
             // txtZipCode
             // 
-            this.txtZipCode.Location = new System.Drawing.Point(313, 96);
+            this.txtZipCode.Location = new System.Drawing.Point(470, 148);
+            this.txtZipCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtZipCode.Name = "txtZipCode";
-            this.txtZipCode.Size = new System.Drawing.Size(80, 20);
+            this.txtZipCode.Size = new System.Drawing.Size(118, 26);
             this.txtZipCode.TabIndex = 9;
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(93, 70);
+            this.txtCity.Location = new System.Drawing.Point(140, 108);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(300, 20);
+            this.txtCity.Size = new System.Drawing.Size(448, 26);
             this.txtCity.TabIndex = 5;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(93, 44);
+            this.txtAddress.Location = new System.Drawing.Point(140, 68);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(300, 20);
+            this.txtAddress.Size = new System.Drawing.Size(448, 26);
             this.txtAddress.TabIndex = 3;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(93, 18);
+            this.txtName.Location = new System.Drawing.Point(140, 28);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(300, 20);
+            this.txtName.Size = new System.Drawing.Size(448, 26);
             this.txtName.TabIndex = 1;
             // 
             // cboStates
             // 
             this.cboStates.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStates.FormattingEnabled = true;
-            this.cboStates.Location = new System.Drawing.Point(93, 97);
+            this.cboStates.Location = new System.Drawing.Point(140, 149);
+            this.cboStates.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboStates.Name = "cboStates";
-            this.cboStates.Size = new System.Drawing.Size(150, 21);
+            this.cboStates.Size = new System.Drawing.Size(223, 28);
             this.cboStates.TabIndex = 7;
+            this.cboStates.SelectedIndexChanged += new System.EventHandler(this.cboStates_SelectedIndexChanged);
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(22, 151);
+            this.btnAccept.Location = new System.Drawing.Point(33, 232);
+            this.btnAccept.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(75, 23);
+            this.btnAccept.Size = new System.Drawing.Size(112, 35);
             this.btnAccept.TabIndex = 10;
             this.btnAccept.Text = "Accept";
             this.btnAccept.UseVisualStyleBackColor = true;
@@ -142,9 +154,10 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(317, 150);
+            this.btnCancel.Location = new System.Drawing.Point(476, 231);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(112, 35);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -152,10 +165,10 @@
             // frmAddModifyCustomer
             // 
             this.AcceptButton = this.btnAccept;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(412, 190);
+            this.ClientSize = new System.Drawing.Size(618, 292);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
@@ -170,6 +183,7 @@
             this.Controls.Add(NameLabel);
             this.Controls.Add(this.txtName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "frmAddModifyCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

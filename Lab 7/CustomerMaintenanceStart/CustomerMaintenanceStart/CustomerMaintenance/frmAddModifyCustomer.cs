@@ -44,6 +44,11 @@ namespace CustomerMaintenance
                 // *** Code a query to retrieve the required information from
                 // the States table, and sort the results by state name.
                 // Bind the State combo box to the query results.
+                List<State> states = MMABooksEntities.entities.States.OrderBy(s => s.StateName).ToList();
+                cboStates.DataSource = states;
+                cboStates.DisplayMember = "StateName";
+                cboStates.ValueMember = "StateCode";
+                
             }
             catch (Exception ex)
             {
@@ -72,6 +77,8 @@ namespace CustomerMaintenance
 
                     try
                     {
+                        MMABooksEntities.entities.Customers.Add(customer);
+                        MMABooksEntities.entities.SaveChanges();
                         // *** Update the database.  Use the DBContext object
                         this.DialogResult = DialogResult.OK;
                     }
@@ -85,6 +92,7 @@ namespace CustomerMaintenance
                     this.PutCustomerData(customer);
                     try
                     {
+                        MMABooksEntities.entities.SaveChanges();
                         // *** Update the database.  Use the DBContext object
                         this.DialogResult = DialogResult.OK;
                     }
@@ -114,6 +122,11 @@ namespace CustomerMaintenance
             customer.City = txtCity.Text;
             customer.State = cboStates.SelectedValue.ToString();
             customer.ZipCode = txtZipCode.Text;
+        }
+
+        private void cboStates_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

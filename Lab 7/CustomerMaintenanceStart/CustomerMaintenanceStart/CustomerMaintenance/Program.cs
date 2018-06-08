@@ -16,8 +16,8 @@ namespace CustomerMaintenance
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmCustomerMaintenance());
-            Application.Run(new Form1());
+            Application.Run(new frmCustomerMaintenance());
+            //Application.Run(new Form1());
         }
     }
 }
